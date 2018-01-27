@@ -18,8 +18,8 @@ fn read(file_path: &str) -> Vec<String> {
     lines_upper
 }
 
-fn create_and_write(lines: &Vec<String>, file_name: &str) {
-    let file = File::create(file_name).expect("Failed to create file");
+fn create_and_write(lines: &Vec<String>, file_path: &str) {
+    let file = File::create(file_path).expect("Failed to create file");
     let mut file = BufWriter::new(file);
     for line in lines {
         writeln!(&mut file, "{}, Lenght {}", line, line.len()).expect("Failed to save line");
